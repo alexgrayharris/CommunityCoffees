@@ -15,8 +15,6 @@ font-family: 'Lato', sans-serif;*/
 /*General settings*/
 /**/
 /**/
-
-
 h1 {
   color: #0A9282;
   font-family: 'Bad Script', cursive;
@@ -41,21 +39,6 @@ h4 {
   font-size: 18px;
 }
 
-@media (min-width: 768px) {
-  h1 {
-    font-size: 125px;
-  }
-  h2 {
-    font-size: 36px;
-  }
-  h3 {
-    font-size: 24px;
-  }
-  h4 {
-    font-size: 20px;
-  }
-}
-
 p {
   color: #303030;
   font-family: 'Lato', sans-serif;
@@ -69,6 +52,22 @@ a {
 
 a:hover {
   color: #0A9282;
+}
+
+/*Tablet and desktop styles for basic general settings*/
+@media (min-width: 768px) {
+  h1 {
+    font-size: 125px;
+  }
+  h2 {
+    font-size: 36px;
+  }
+  h3 {
+    font-size: 24px;
+  }
+  h4 {
+    font-size: 20px;
+  }
 }
 
 /*Signup form for mail list*/
@@ -113,7 +112,6 @@ input[type=checkbox] + label {
 /*Header with main photo, title, and logo (two vertical panes)*/
 /**/
 
-/*Header container*/
 /*Main photo*/
 #main-photo {
   align-self: flex-start;
@@ -127,10 +125,12 @@ input[type=checkbox] + label {
   width: cover;
 }
 
+/*Container with title and subtitle*/
 #title {
   padding: 0 2%;
 }
 
+/*Make title text glow*/
 #title h1 {
   text-shadow: 1px 1px 15px #ffffff;
 }
@@ -141,37 +141,41 @@ input[type=checkbox] + label {
   padding: 5%;
 }
 
+/*Hide the basic logo and nav on mobile screens*/
 #logo-nav-container {
   display: none;
 }
 
+/*Style mobile menu*/
 #mobile-menu {
+  background: white;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  z-index: 1;
-  background: white;
-  position: absolute;
-  right: 0;
-  width: 150px;
-  height: 50vh;
-  text-align: right;
   font-family: 'Lato', sans-serif;
   font-size: 18px;
+  height: 50vh;
+  justify-content: space-around;
   padding-right: 5%;
+  position: absolute;
+  right: 0;
+  text-align: right;
+  width: 150px;
+  z-index: 1;
 }
 
+/*Style mobile menu hamburger icon*/
 .lnr-menu {
-  color: white;
-  font-size: 40px;
   align-self: flex-end;
+  color: white;
   display: flex;
   fill: white;
+  font-size: 40px;
   padding: 3%;
 }
 
 
-/*Tablet size and desktop size*/
+
+/*Tablet size and desktop size styles for header*/
 @media (min-width: 768px) {
   header {
     align-items: flex-end;
@@ -184,15 +188,13 @@ input[type=checkbox] + label {
     width: 45vw;
   }
   #title {
-    text-align: left;
     margin-left: 20vw;
+    text-align: left;
   }
   #title h1 {
-    font-size: 125px;
     align-self: center;
     display: flex;
     text-align: left;
-    text-shadow: 1px 1px 15px #ffffff;
   }
   #title h3 {
     color: #303030;
@@ -211,35 +213,31 @@ input[type=checkbox] + label {
   .lnr-menu {
     display: none;
   }
-}
-
-/*Nav in top right, make horizontal*/
-#main-nav {
-  color: #303030;
-  display: flex;
-  margin: 2vh 2vh 0 -10vw;
-  text-align: right;
-}
-
-.nav-item {
-  color: #303030;
-  font-family: 'Lato', sans-serif;
-  font-size: 14px;
-  padding: 8px;
-}
-
-/*Logo on bottom right, make a fixed width with some padding*/
-.logo {
-  height: auto;
-  padding: 5%;
-  transition: .5s ease-in-out;
-  width: 120px;
-}
+  /*Nav in top right, make horizontal*/
+  #main-nav {
+    color: #303030;
+    display: flex;
+    margin: 2vh 2vh 0 -10vw;
+    text-align: right;
+  }
+  .nav-item {
+    color: #303030;
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    padding: 8px;
+  }
+  /*Logo on bottom right, make a fixed width with some padding*/
+  .logo {
+    height: auto;
+    padding: 5%;
+    transition: .5s ease-in-out;
+    width: 120px;
+  }
   .logo:hover {
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
-  }
-
+    }
+}
 
 /**/
 /*Section 2 with logo and quote*/
@@ -250,6 +248,7 @@ input[type=checkbox] + label {
   align-items: center;
   background-color: #B74D18;
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
 }
 
@@ -265,12 +264,24 @@ input[type=checkbox] + label {
 
 #quote1 {
   margin: 5%;
-  text-align: right;
+  text-align: center;
   width: 55%;
 }
 
 #quote1 h3 {
   color: white;
+}
+
+@media (min-width: 768px) {
+  #section2 {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+  }
+  #quote1 {
+    text-align: right;
+  }
 }
 
 /**/
@@ -293,6 +304,7 @@ input[type=checkbox] + label {
   width: 75%;
 }
 
+/*Tablet and desktop styles for section 3*/
 @media (min-width: 768px) {
   #section3 {
     flex-direction: row;
@@ -305,6 +317,7 @@ input[type=checkbox] + label {
     width: 40%;
   }
 }
+
 /**/
 /*Section 4 includes two pictures that slide out more info*/
 /**/
@@ -313,8 +326,6 @@ input[type=checkbox] + label {
 #section4 {
   height: 100vh;
 }
-
-
 
 #section4 h3 {
   padding: 5% 5% 1% 5%;
@@ -326,18 +337,6 @@ input[type=checkbox] + label {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-}
-
-@media (min-width: 768px) {
-  #section4 {
-    height: 80vh;
-  }
-  #info-slider-container {
-    flex-direction: row;
-  }
-  #left-info-slider, #right-info-slider {
-    height: 40vh;
-  }
 }
 
 /*Left info slider styles and background*/
@@ -377,13 +376,28 @@ input[type=checkbox] + label {
   color: white;
 }
 
+/*Tablet and desktop styles for Section 4*/
+@media (min-width: 768px) {
+  #section4 {
+    height: 80vh;
+  }
+  #info-slider-container {
+    flex-direction: row;
+  }
+  #left-info-slider, #right-info-slider {
+    height: 40vh;
+  }
+}
+
 /**/
 /*Section 5 which includes icons and descriptions of the project*/
 /**/
 #section5 {
+  align-items: center;
   display: flex;
-  align-items: flex-start;
+  flex-direction: column;
   justify-content: space-around;
+  margin: 5% 0;
 }
 
 #map, #coffee-cup, #bullhorn {
@@ -392,8 +406,17 @@ input[type=checkbox] + label {
 }
 
 .icon {
-  width: 20%;
   height: auto;
+  padding: 5%;
+  width: 20%;
+}
+
+/*Tablet and desktop styles for Section 5*/
+@media (min-width: 768px) {
+  #section5 {
+    align-items: flex-start;
+    flex-direction: row;
+  }
 }
 
 /**/
@@ -410,25 +433,11 @@ input[type=checkbox] + label {
   justify-content: space-between;
 }
 
-
-
 /*Generic styles for three community profiles*/
 .profile {
   height: 25%;
   width: 75%;
   margin: 5% 0;
-}
-
-@media (min-width: 768px) {
-  #section6 {
-    flex-direction: row;
-    height: 75vh;
-    justify-content: space-around;
-}
-  .profile {
-    height: 75%;
-    width: 350px;
-  }
 }
 
 /*Left profile*/
@@ -464,6 +473,18 @@ input[type=checkbox] + label {
   background-size: cover;
 }
 
+/*Tablet and desktop styles for section 6*/
+@media (min-width: 768px) {
+  #section6 {
+    flex-direction: row;
+    height: 75vh;
+    justify-content: space-around;
+}
+  .profile {
+    height: 75%;
+    width: 350px;
+  }
+}
 
 /**/
 /*Footer with basic information*/
