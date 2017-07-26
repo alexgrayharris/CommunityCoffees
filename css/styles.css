@@ -31,6 +31,7 @@ h3 {
   color: #303030;
   font-family: 'Lato', sans-serif;
   font-size: 24px;
+  text-align: center;
 }
 
 h4 {
@@ -42,7 +43,7 @@ h4 {
 p {
   color: #303030;
   font-family: 'Lato', sans-serif;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 a {
@@ -55,7 +56,22 @@ a:hover {
 }
 
 /*Tablet and desktop styles for basic general settings*/
-@media (min-width: 768px) {
+@media (min-width: 600px) and (max-width: 767px) {
+  h1 {
+    font-size: 110px;
+  }
+  h2 {
+    font-size: 28px;
+  }
+  h3 {
+    font-size: 26px;
+  }
+  h4 {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 960px) {
   h1 {
     font-size: 125px;
   }
@@ -63,13 +79,30 @@ a:hover {
     font-size: 36px;
   }
   h3 {
-    font-size: 24px;
+    font-size: 28px;
   }
   h4 {
     font-size: 20px;
   }
-}
 
+}
+@media (min-width: 960px) {
+  h1 {
+    font-size: 150px;
+  }
+  h2 {
+    font-size: 38px;
+  }
+  h3 {
+    font-size: 28px;
+  }
+  h4 {
+    font-size: 24px;
+  }
+  p {
+    font-size: 16px;
+  }
+}
 /*Signup form for mail list*/
 .signup-form {
   display: block;
@@ -77,15 +110,20 @@ a:hover {
   width: 75%;
 }
 
-input[type=text] {
+input[type=text], input[type=email] {
   border: none;
   border-bottom: 3px solid #6DC8BF;
   font-family: 'Lato', sans-serif;
   display: block;
-  margin: 5px;
+  margin: 2%;
   outline: none;
-  padding: 5% 0;
+  padding: 2% 0;
   width: 100%;
+}
+
+input[type=datepart] {
+  margin: 2%;
+  padding: 2% 0;
 }
 
 input[type=text]:focus {
@@ -96,8 +134,33 @@ input[type=checkbox] + label {
   display: inline-block;
 }
 
+#mce-MESSAGE {
+  padding: 5% 0;
+}
+
+#mc_embed_signup {
+  color: #303030;
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+}
+
+.indicates-required {
+  font-size: 12px;
+  margin-bottom: 3%;
+}
+
+.datefield {
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+  margin: 5% 0 5% 2%;
+  width: 80%;
+
+}
+
+
 /*Submit button*/
-.submit-button {
+.submit-button, #mc-embedded-subscribe {
   background-color: #92280a;
   border: 0;
   border-radius: 5px;
@@ -105,6 +168,7 @@ input[type=checkbox] + label {
   display: block;
   font-family: 'Lato', sans-serif;
   font-size: 18px;
+  margin-top: 3%;
   padding: 5px 35px;
 }
 
@@ -112,6 +176,10 @@ input[type=checkbox] + label {
 /*Header with main photo, title, and logo (two vertical panes)*/
 /**/
 
+header {
+  align-items: flex-end;
+  justify-content: space-between;
+}
 /*Main photo*/
 #main-photo {
   align-self: flex-start;
@@ -132,6 +200,8 @@ input[type=checkbox] + label {
 
 /*Make title text glow*/
 #title h1 {
+  align-self: center;
+  display: flex;
   text-shadow: 1px 1px 15px #ffffff;
 }
 
@@ -144,16 +214,28 @@ input[type=checkbox] + label {
 /*Hide the basic logo and nav on mobile screens*/
 #logo-nav-container {
   display: none;
+  align-items: flex-end;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-between;
+  text-align: right;
+  width: 30vw;
+}
+
+#main-nav {
+  color: #303030;
+  margin: 2vh 2vw 0 -15vw;
+  text-align: right;
 }
 
 /*Style mobile menu*/
 #mobile-menu {
-  background: white;
+  background: linear-gradient(rgba(250,250,250,.75), rgba(250,250,250,1));
   display: flex;
   flex-direction: column;
   font-family: 'Lato', sans-serif;
   font-size: 18px;
-  height: 50vh;
+  height: 100%;
   justify-content: space-around;
   padding-right: 5%;
   position: absolute;
@@ -164,81 +246,106 @@ input[type=checkbox] + label {
 }
 
 /*Style mobile menu hamburger icon*/
-.lnr-menu {
+#menu {
   align-self: flex-end;
-  color: white;
   display: flex;
-  fill: white;
-  font-size: 40px;
   padding: 3%;
 }
 
-
+.nav-item {
+  color: #303030;
+  font-family: 'Lato', sans-serif;
+  padding: 8px;
+}
+/*Logo on bottom right, make a fixed width with some padding*/
+.logo {
+  height: auto;
+  padding: 5%;
+  transition: .5s ease-in-out;
+  width: 120px;
+}
+.logo:hover {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  }
 
 /*Tablet size and desktop size styles for header*/
-@media (min-width: 768px) {
+@media (min-width: 600px) and (max-width: 767px) {
+  #title h1 {
+    margin-top: -2vh;
+    font-size: 115px;
+  }
+}
+@media (min-width: 768px) and (max-width: 960px){
   header {
-    align-items: flex-end;
     display: flex;
-    justify-content: space-between;
   }
   #main-photo {
-    align-self: flex-start;
     display: flex;
     width: 45vw;
   }
   #title {
-    margin-left: 20vw;
+    margin-left: 25vw;
     text-align: left;
   }
   #title h1 {
-    align-self: center;
-    display: flex;
     text-align: left;
+    font-size: 115px;
   }
   #title h3 {
     color: #303030;
-    margin: -8vh 0 10vh 25vw;
+    font-size: 24px;
+    margin: -8vh 0 10vh 20vw;
+    text-align: left;
     width: 150%;
   }
   #logo-nav-container {
-    align-items: flex-end;
     display: flex;
-    flex-direction: column;
-    height: 100vh;
-    justify-content: space-between;
-    text-align: right;
-    width: 30vw;
   }
-  .lnr-menu {
+  #menu {
+    display: none;
+  }
+  .nav-item {
+    font-size: 12px;
+  }
+  /*Nav in top right, make horizontal*/
+  #main-nav {
+    display: flex;
+  }
+}
+@media (min-width: 961px) {
+  header {
+    display: flex;
+  }
+  #main-photo {
+    display: flex;
+    width: 45vw;
+  }
+  #title {
+    margin-left: 25vw;
+    text-align: left;
+  }
+  #title h1 {
+    text-align: left;
+    font-size: 125px;
+  }
+  #title h3 {
+    color: #303030;
+    margin: -8vh 0 10vh 20vw;
+    text-align: left;
+    width: 150%;
+  }
+  #logo-nav-container {
+    display: flex;
+  }
+  #menu {
     display: none;
   }
   /*Nav in top right, make horizontal*/
   #main-nav {
-    color: #303030;
     display: flex;
-    margin: 2vh 2vh 0 -10vw;
-    text-align: right;
   }
-  .nav-item {
-    color: #303030;
-    font-family: 'Lato', sans-serif;
-    font-size: 14px;
-    padding: 8px;
-  }
-  /*Logo on bottom right, make a fixed width with some padding*/
-  .logo {
-    height: auto;
-    padding: 5%;
-    transition: .5s ease-in-out;
-    width: 120px;
-  }
-  .logo:hover {
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
-    }
 }
-
 /**/
 /*Section 2 with logo and quote*/
 /**/
@@ -252,14 +359,9 @@ input[type=checkbox] + label {
   justify-content: space-around;
 }
 
-.white-logo {
-  height: auto;
-  margin: 5%;
-  width: 25%;
-}
-
 .white-logo-img {
   height: 45vh;
+  margin: 5%;
 }
 
 #quote1 {
@@ -272,12 +374,24 @@ input[type=checkbox] + label {
   color: white;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 600px) and (max-width: 767px) {
+
+}
+
+@media (min-width: 768px) and (max-width: 960px) {
   #section2 {
     display: flex;
-    justify-content: space-around;
     flex-direction: row;
-    align-items: center;
+  }
+  #quote1 {
+    text-align: right;
+  }
+}
+
+@media (min-width: 960px) {
+  #section2 {
+    display: flex;
+    flex-direction: row;
   }
   #quote1 {
     text-align: right;
@@ -298,9 +412,7 @@ input[type=checkbox] + label {
 
 /*Embed a Twitter feed on left*/
 #twitter-feed {
-  border: 1px solid red;
-  height: 300px;
-  margin: 10% 0;
+  margin: 5% 0;
   width: 75%;
 }
 
@@ -324,7 +436,7 @@ input[type=checkbox] + label {
 
 /*Section 4 container*/
 #section4 {
-  height: 100vh;
+  margin: 5% 0;
 }
 
 #section4 h3 {
@@ -343,13 +455,13 @@ input[type=checkbox] + label {
 #left-info-slider {
   background: url("../img/woman_working.jpg") no-repeat center center, rgba(255,255,255,0.4);
   background-size: cover;
-  height: 30vh;
+  height: 40vh;
   margin: 5% 0;
-  width: 40%;
+  width: 80%;
 }
 
 #left-info-slider:hover {
-  background: linear-gradient(to bottom left, rgba(0,0,0,.5), rgba(0,0,0,.5)), url("../img/woman_working.jpg") no-repeat center center;
+  background: linear-gradient(to bottom left, rgba(0,0,0,.7), rgba(0,0,0,.7)), url("../img/woman_working.jpg") no-repeat center center;
   background-size: cover;
 }
 
@@ -357,13 +469,13 @@ input[type=checkbox] + label {
 #right-info-slider {
   background: url("../img/manonphone.jpg") no-repeat center top;
   background-size: cover;
-  height: 30vh;
+  height: 40vh;
   margin: 5% 0;
-  width: 40%;
+  width: 80%;
 }
 
 #right-info-slider:hover {
-  background: linear-gradient(to bottom left, rgba(0,0,0,.5), rgba(0,0,0,.5)), url("../img/manonphone.jpg") no-repeat center top;
+  background: linear-gradient(to bottom left, rgba(0,0,0,.7), rgba(0,0,0,.7)), url("../img/manonphone.jpg") no-repeat center top;
   background-size: cover;
 }
 
@@ -386,6 +498,7 @@ input[type=checkbox] + label {
   }
   #left-info-slider, #right-info-slider {
     height: 40vh;
+    width: 40%;
   }
 }
 
@@ -407,15 +520,27 @@ input[type=checkbox] + label {
 
 .icon {
   height: auto;
-  padding: 5%;
-  width: 20%;
+  transition: .5s ease-in-out;
+  width: 35%;
 }
+
+.icon:hover {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  }
+
+  #map, #coffee-cup, #bullhorn {
+    padding: 5%;
+  }
 
 /*Tablet and desktop styles for Section 5*/
 @media (min-width: 768px) {
   #section5 {
     align-items: flex-start;
     flex-direction: row;
+  }
+  .icon {
+    width: 25%;
   }
 }
 
@@ -424,64 +549,75 @@ input[type=checkbox] + label {
 /**/
 
 /*Section 6 container*/
-#section6 {
+.threeprofiles {
   align-items: center;
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  margin: 10% 0;
+  margin: 5% 0;
   justify-content: space-between;
 }
 
 /*Generic styles for three community profiles*/
 .profile {
-  height: 25%;
+  height: 30vh;
   width: 75%;
   margin: 5% 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-info {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.profile-info h3 {
+  color: white;
 }
 
 /*Left profile*/
 #profile1 {
-  background: url("../img/small_town1.jpg") no-repeat center center;
-  background-size: cover;
-}
-
-#profile1:hover {
   background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url("../img/small_town1.jpg") no-repeat center center;
   background-size: cover;
 }
 
 /*Middle profile*/
 #profile2 {
-  background: url("../img/city_neighborhood.jpg") no-repeat center center;
-  background-size: cover;
-}
-
-#profile2:hover {
   background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url("../img/city_neighborhood.jpg") no-repeat center center;
   background-size: cover;
 }
 
 /*Right profile*/
 #profile3 {
-  background: url("../img/city_towers.jpg") no-repeat center center;
-  background-size: cover;
-}
-
-#profile3:hover {
   background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url("../img/city_towers.jpg") no-repeat center center;
   background-size: cover;
 }
 
+.learn-more {
+  background-color: #92280a;
+  border: 0;
+  border-radius: 5px;
+  color: white;
+  display: none;
+  font-family: 'Lato', sans-serif;
+  font-size: 18px;
+  margin-top: 3%;
+  padding: 5px 35px;
+  text-align: center;
+}
+
 /*Tablet and desktop styles for section 6*/
 @media (min-width: 768px) {
-  #section6 {
+  .threeprofiles {
     flex-direction: row;
     height: 75vh;
     justify-content: space-around;
 }
   .profile {
-    height: 75%;
+    height: 75vh;
     width: 350px;
   }
 }
@@ -539,6 +675,7 @@ footer p {
 /*Header text styles*/
 #secondary-h2, #secondary-h3 {
   color: white;
+  text-align: right;
   text-decoration: none;
   margin: 0;
 }
@@ -556,34 +693,42 @@ main {
 
 /*Left panel includes nav and small logo*/
 #secondary-left-panel {
-  display: block;
-  padding: 5%;
-  text-align: right;
-  width: 20vw;
+  display: none;
 }
 
-#secondary-nav {
-  display: block;
-  width: 100%;
-}
 
-.sec-nav-item {
-  color: #303030;
-  font-family: 'Lato', sans-serif;
-  font-size: 12px;
-  padding: 5% 0;
-}
+/*Tablet and desktop styles for secondary page nav */
+@media (min-width: 768px) {
+  #secondary-left-panel {
+    display: block;
+    padding: 5%;
+    text-align: right;
+    width: 20vw;
+  }
+  #secondary-nav {
+    display: block;
+  }
 
-.small-logo {
-  width: 75%;
-  height: auto;
-  margin-top: 5%;
-  transition: .5s ease-in-out;
-}
+  .sec-nav-item {
+    color: #303030;
+    font-family: 'Lato', sans-serif;
+    font-size: 12px;
+    padding: 5% 0;
+  }
 
-.small-logo:hover {
-  -webkit-transform: scale(1.1);
-	transform: scale(1.1);
+  .small-logo {
+    display: block;
+    width: 75%;
+    height: auto;
+    margin-top: 5%;
+    text-align: right;
+    transition: .5s ease-in-out;
+  }
+
+  .small-logo:hover {
+    -webkit-transform: scale(1.1);
+  	transform: scale(1.1);
+  }
 }
 
 /*Right panel includes main content*/
