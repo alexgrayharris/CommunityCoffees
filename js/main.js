@@ -22,15 +22,16 @@ $(document).ready(function() {
      });
 
      $('#profile1').hover(function() {
-       $('#profile1-learn-more').toggle();
+       $('#profile1-learn-more').toggleClass('show');
+
      });
 
      $('#profile2').hover(function() {
-       $('#profile2-learn-more').toggle();
+       $('#profile2-learn-more').toggleClass('show');
      });
 
      $('#profile3').hover(function() {
-       $('#profile3-learn-more').toggle();
+       $('#profile3-learn-more').toggleClass('show');
      });
 
      var ias = $.ias({
