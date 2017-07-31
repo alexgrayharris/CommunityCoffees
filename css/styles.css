@@ -23,7 +23,7 @@ font-family: 'Lato', sans-serif;*/
 h1 {
   color: var(--yellow);
   font-family: 'Playfair Display', serif;
-  font-size: 100px;
+  font-size: 75px;
 }
 
 h2 {
@@ -35,7 +35,7 @@ h2 {
 h3 {
   color: var(--brown);
   font-family: 'Lato', sans-serif;
-  font-size: 22px;
+  font-size: 24px;
   text-align: left;
 }
 
@@ -48,7 +48,7 @@ h4 {
 p {
   color: var(--darkgray);
   font-family: 'Lato', sans-serif;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 a {
@@ -63,13 +63,13 @@ a:hover {
 /*Tablet and desktop styles for basic general settings*/
 @media (min-width: 600px) and (max-width: 767px) {
   h1 {
-    font-size: 110px;
+    font-size: 100px;
   }
   h2 {
     font-size: 30px;
   }
   h3 {
-    font-size: 26px;
+    font-size: 24px;
   }
   h4 {
     font-size: 20px;
@@ -78,13 +78,13 @@ a:hover {
 
 @media (min-width: 768px) and (max-width: 960px) {
   h1 {
-    font-size: 125px;
+    font-size: 105px;
   }
   h2 {
     font-size: 36px;
   }
   h3 {
-    font-size: 28px;
+    font-size: 26px;
   }
   h4 {
     font-size: 20px;
@@ -93,13 +93,13 @@ a:hover {
 }
 @media (min-width: 960px) {
   h1 {
-    font-size: 150px;
+    font-size: 125px;
   }
   h2 {
     font-size: 40px;
   }
   h3 {
-    font-size: 30px;
+    font-size: 28px;
   }
   h4 {
     font-size: 24px;
@@ -131,17 +131,10 @@ input[type=datepart] {
   padding: 2% 0;
 }
 
-input[type=text]:focus {
+input[type=text]:focus, input[type=text]:hover, input[type=email]:focus, input[type=email]:hover {
   border-bottom: 6px solid var(--yellow);
 }
 
-input[type=text]:hover {
-  border-bottom: 6px solid var(--yellow);
-}
-
-input[type=checkbox] + label {
-  display: inline-block;
-}
 
 #mce-MESSAGE {
   padding: 5% 0;
@@ -196,7 +189,7 @@ header {
 /*Main photo*/
 #main-photo {
   align-self: flex-start;
-  background: linear-gradient(rgba(92,74,57, .4), rgba(250,250,259,.5)), url('../img/prettycoffee.jpg') no-repeat center center;
+  background: linear-gradient(rgba(92,74,57,.7), rgba(250,250,250,.5)), url('../img/prettycoffee.jpg') no-repeat center center;
   background-attachment: fixed;
   background-size: cover;
   display: flex;
@@ -204,11 +197,6 @@ header {
   height: 100vh;
   text-align: center;
   width: cover;
-}
-
-/*Container with title and subtitle*/
-#title {
-  padding: 0 2%;
 }
 
 /*Make title text glow*/
@@ -258,6 +246,14 @@ header {
   z-index: 1;
 }
 
+.close-icon {
+  transition: .2s ease-in-out;
+}
+.close-icon:hover {
+  -webkit-transform: scale(1.3);
+  transform: scale(1.3);
+}
+
 /*Style mobile menu hamburger icon*/
 #menu {
   align-self: flex-end;
@@ -286,7 +282,6 @@ header {
 @media (min-width: 600px) and (max-width: 767px) {
   #title h1 {
     margin-top: -2vh;
-    font-size: 115px;
   }
 }
 @media (min-width: 768px) and (max-width: 960px){
@@ -303,11 +298,9 @@ header {
   }
   #title h1 {
     text-align: left;
-    font-size: 115px;
   }
   #title h3 {
     color: var(--brown);
-    font-size: 24px;
     margin: -8vh 0 10vh 20vw;
     text-align: left;
     width: 150%;
@@ -340,7 +333,6 @@ header {
   }
   #title h1 {
     text-align: left;
-    font-size: 125px;
   }
   #title h3 {
     color: var(--brown);
@@ -557,7 +549,10 @@ header {
 /**/
 /*Section 6 including three community profiles*/
 /**/
-
+#section6 h3 {
+  padding: 5% 5% 1% 5%;
+  text-align: center;
+}
 /*Section 6 container*/
 .threeprofiles {
   align-items: center;
@@ -655,7 +650,7 @@ footer p {
 /*Adjust social media icons*/
 .social-icon {
   height: auto;
-  width: 20%;
+  width: 40%;
   padding: 0 10%;
   transition: .5s ease-in-out;
 }
@@ -713,6 +708,13 @@ main {
 /*Left panel includes nav and small logo*/
 #secondary-left-panel {
   display: none;
+  padding: 5%;
+  text-align: right;
+  width: 20vw;
+}
+
+.sec-nav-item {
+  padding: 0 5px;
 }
 
 #secondary-nav-mobile {
@@ -720,52 +722,60 @@ main {
   flex-direction: row;
   color: var(--darkgray);
   font-family: 'Lato', sans-serif;
-  font-size: 14px;
+  font-size: 10px;
   justify-content: space-between;
+}
+
+.small-logo {
+  display: block;
+  height: auto;
+  margin-top: 5%;
+  transition: .5s ease-in-out;
   width: 75%;
 }
 
+.sec-nav-item {
+  color: var(--darkgray);
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  padding: 5% 0;
+}
+
+.small-logo:hover {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
 /*Tablet and desktop styles for secondary page nav */
-@media (min-width: 768px) {
-  #secondary-h2 {
-    font-size: 36px;
-  }
-  #secondary-h3 {
-    font-size: 30px;
-  }
+@media (min-width: 600px) and (max-width: 767px) {
+
+}
+
+@media (min-width: 768px) and (max-width: 960px) {
   #secondary-nav-mobile {
     display: none;
   }
   #secondary-left-panel {
     display: block;
-    padding: 5%;
-    text-align: right;
-    width: 20vw;
   }
   #secondary-nav {
     display: block;
   }
-  .sec-nav-item {
-    color: var(--darkgray);
-    font-family: 'Lato', sans-serif;
-    font-size: 16px;
-    padding: 5% 0;
-  }
 
-  .small-logo {
-    display: block;
-    height: auto;
-    margin-top: 5%;
-    transition: .5s ease-in-out;
-    width: 75%;
-  }
-
-  .small-logo:hover {
-    -webkit-transform: scale(1.1);
-  	transform: scale(1.1);
-  }
 }
 
+@media (min-width: 961px) {
+  #secondary-nav-mobile {
+    display: none;
+  }
+  #secondary-left-panel {
+    display: block;
+
+  }
+  #secondary-nav {
+    display: block;
+  }
+}
 /*Right panel includes main content*/
 #secondary-right-panel {
   width: 80vw;
