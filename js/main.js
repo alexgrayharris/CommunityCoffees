@@ -37,6 +37,39 @@ $(document).ready(function() {
        $('#profile3-learn-more').toggleClass('show');
    });
 
+  //  Waypoint on hitting section 2, make nav full screen width and add small logo
+  if ( $('#section2').length > 0 ) {
+    var waypoint = new Waypoint({
+      element: document.getElementById('section2'),
+      handler: function(direction) {
+        if (direction === 'down') {
+          $('#logo-nav-container').addClass('nav-change');
+          $('#logo-nav-container').prepend('<img id="nav-logo" src="img/CommunityCoffees.png" />')
+        }
+        if (direction === 'up') {
+          $('#logo-nav-container').removeClass('nav-change');
+          $('#nav-logo').remove();
+        }
+      }
+    });
+  }
+
+  //  Waypoint on hitting section 5, make nav full screen width and add small logo
+    var waypoint2 = new Waypoint({
+      element: document.getElementById('section5'),
+      handler: function(direction) {
+        if (direction === 'down') {
+          $('#coffee-cup').addClass('grow-coffee-cup');
+        }
+        if (direction === 'up') {
+          $('#coffee-cup').removeClass('grow-coffee-cup');
+        }
+      },
+    offset: 'bottom-in-view'
+  });
+
+
+
   // Plugin for lazy scrolling on blog
   var ias = $.ias({
        container:  ".blog-container",
@@ -50,5 +83,7 @@ $(document).ready(function() {
     ias.extension(new IASNoneLeftExtension({
      text: 'There are no more pages left to load.'      // override text when no pages left
     }));
+
+
 
 })
