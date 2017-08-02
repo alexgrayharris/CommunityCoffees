@@ -43,11 +43,11 @@ $(document).ready(function() {
       element: document.getElementById('section2'),
       handler: function(direction) {
         if (direction === 'down') {
-          $('#logo-nav-container').addClass('nav-change');
-          $('#logo-nav-container').prepend('<img id="nav-logo" src="img/CommunityCoffees.png" />')
+          $('.logo-nav-container').addClass('nav-change');
+          $('.logo-nav-container').prepend('<img id="nav-logo" src="img/CommunityCoffees.png" />')
         }
         if (direction === 'up') {
-          $('#logo-nav-container').removeClass('nav-change');
+          $('.logo-nav-container').removeClass('nav-change');
           $('#nav-logo').remove();
         }
       }
@@ -68,8 +68,6 @@ $(document).ready(function() {
     offset: 'bottom-in-view'
   });
 
-
-
   // Plugin for lazy scrolling on blog
   var ias = $.ias({
        container:  ".blog-container",
@@ -83,7 +81,5 @@ $(document).ready(function() {
     ias.extension(new IASNoneLeftExtension({
      text: 'There are no more pages left to load.'      // override text when no pages left
     }));
-
-
 
 })
